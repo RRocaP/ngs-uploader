@@ -152,5 +152,12 @@ echo "Setup complete. Don't forget to set the environment variables CLIENT_ID, C
 # Authenticate with GitHub CLI
 gh auth login
 
+# Create the repository on GitHub
+gh repo create ngs-uploader --public --source=. --remote=origin
+
+# Add and commit changes
+git add .
+git commit -m "Initial commit"
+
 # Push changes to GitHub
 git push origin master
