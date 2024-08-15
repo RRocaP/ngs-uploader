@@ -1,10 +1,3 @@
 [build]
-  functions = "netlify/functions"
-
-[[redirects]]
-  from = "/oauth2/callback"
-  to = "/.netlify/functions/oauth2-callback"
-  status = 200
-[build]
   publish = "dist"
   command = "npm run build"

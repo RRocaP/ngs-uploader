@@ -3,8 +3,8 @@
 # Build the Vue application
 npm run build
 
-# Create a Netlify configuration file
-cat <<EOT >> netlify.toml
+# Create a Netlify configuration file in the root directory
+cat <<EOT > netlify.toml
 [build]
   publish = "dist"
   command = "npm run build"
@@ -33,3 +33,11 @@ git commit -m "Initial commit"
 
 # Push changes to GitHub
 git push origin master
+
+# Set environment variables on Netlify
+echo "Setting environment variables on Netlify..."
+netlify env:set CLIENT_ID abc123
+netlify env:set CLIENT_SECRET xyz789
+netlify env:set REDIRECT_URI https://your-site-name.netlify.app/callback
+
+echo "Deployment and setup complete."
